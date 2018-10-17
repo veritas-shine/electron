@@ -26,7 +26,11 @@ bool IsWebContents(v8::Isolate* isolate, content::RenderProcessHost* process) {
   if (!web_contents)
     return false;
 
-  auto api_web_contents = WebContents::CreateFrom(isolate, web_contents);
+  // No need to process if the WebContents is not managed by us.
+  auto api_web_contents = WebContents::From(isolate, web_contents);
+  if (api_web_contents.IsEmpty())
+    return false;
+
   auto type = api_web_contents->GetType();
   return type == WebContents::Type::BROWSER_WINDOW ||
          type == WebContents::Type::WEB_VIEW;
