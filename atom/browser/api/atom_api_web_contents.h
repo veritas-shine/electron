@@ -29,10 +29,6 @@ namespace blink {
 struct WebDeviceEmulationParams;
 }
 
-namespace brightray {
-class InspectableWebContents;
-}
-
 namespace mate {
 class Arguments;
 class Dictionary;
@@ -46,6 +42,7 @@ namespace atom {
 
 class AtomBrowserContext;
 class AtomJavaScriptDialogManager;
+class InspectableWebContents;
 class WebContentsZoomController;
 class WebViewGuestDelegate;
 class FrameSubscriber;
