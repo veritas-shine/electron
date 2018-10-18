@@ -114,7 +114,7 @@ class CommonWebContentsDelegate : public content::WebContentsDelegate,
   void HideAutofillPopup();
 #endif
 
-  // brightray::InspectableWebContentsDelegate:
+  // content::InspectableWebContentsDelegate:
   void DevToolsSaveToFile(const std::string& url,
                           const std::string& content,
                           bool save_as) override;
@@ -133,7 +133,7 @@ class CommonWebContentsDelegate : public content::WebContentsDelegate,
                             const std::string& file_system_path,
                             const std::string& query) override;
 
-  // brightray::InspectableWebContentsViewDelegate:
+  // content::InspectableWebContentsViewDelegate:
 #if defined(TOOLKIT_VIEWS) && !defined(OS_MACOSX)
   gfx::ImageSkia GetDevToolsWindowIcon() override;
 #endif

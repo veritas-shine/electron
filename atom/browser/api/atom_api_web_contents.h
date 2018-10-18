@@ -400,10 +400,10 @@ class WebContents : public mate::TrackableObject<WebContents>,
       content::WebContentsObserver::MediaStoppedReason reason) override;
   void DidChangeThemeColor(SkColor theme_color) override;
 
-  // brightray::InspectableWebContentsDelegate:
+  // content::InspectableWebContentsDelegate:
   void DevToolsReloadPage() override;
 
-  // brightray::InspectableWebContentsViewDelegate:
+  // content::InspectableWebContentsViewDelegate:
   void DevToolsFocused() override;
   void DevToolsOpened() override;
   void DevToolsClosed() override;
